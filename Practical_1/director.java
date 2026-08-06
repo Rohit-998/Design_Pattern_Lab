@@ -3,19 +3,8 @@ package Practical_1;
 
 public class director implements baseLeaveApprover {
 
-    private static director instance;
-
-  
-    private director() {
-        System.out.println("Single Instance Of Director Created");
-    }
-
-    
-    public static director getDirectorInstance() {
-        if (instance == null) {
-            instance = new director();
-        }
-        return instance;
+    public director() {
+        System.out.println("Director Created");
     }
 
     @Override

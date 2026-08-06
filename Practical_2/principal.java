@@ -1,4 +1,4 @@
-package Practical_1;
+package Practical_2;
 
 
 public class principal implements baseLeaveApprover {
@@ -11,22 +11,22 @@ public class principal implements baseLeaveApprover {
     }
 
     @Override
-    public void approveLeave(int days) {
-        System.out.println("Leave Is Approved By Principal For " + days + " Days");
+    public void approveLeave(int days , String reason) {
+        System.out.println("Leave Is Approved By Principal For " + days + " Days" + " For " + reason + " Leave" );
     }
 
     @Override
-    public void passItToHigherAuthority(int days) {
+    public void passItToHigherAuthority(int days , String reason) {
         System.out.println("Principal: Cannot approve " + days + " days. Passing to Director...");
-        higherAuthority.handelRequest(days);
+        higherAuthority.handelRequest(days,reason);
     }
 
     @Override
-    public void handelRequest(int days) {
+    public void handelRequest(int days, String reason) {
         if (days <= 7) {
-            approveLeave(days);
+            approveLeave(days,reason);
         } else {
-            passItToHigherAuthority(days);
+            passItToHigherAuthority(days,reason);
         }
     }
 }

@@ -4,20 +4,10 @@ package Practical_1;
 public class hod implements baseLeaveApprover {
 
     private baseLeaveApprover higherAuthority; 
-    private static hod instance;
 
-    
-    private hod(baseLeaveApprover higherAuth) {
+    public hod(baseLeaveApprover higherAuth) {
         this.higherAuthority = higherAuth;
-        System.out.println("Single Instance Of HOD Created");
-    }
-
-    
-    public static hod getHodInstance(baseLeaveApprover higherAuth) {
-        if (instance == null) {
-            instance = new hod(higherAuth);
-        }
-        return instance;
+        System.out.println("HOD Created");
     }
 
     @Override
